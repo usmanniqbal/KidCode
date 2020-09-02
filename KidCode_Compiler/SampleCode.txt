@@ -1,0 +1,41 @@
+﻿start()
+{
+	private calculateResult = 1
+	text messsage = empty
+	
+	calculate(number num1, number num2) 
+	{
+		text error = empty
+		yesNo isError = empty
+		
+		if num1 < 0
+			error = 'Num1 should not be less than 0'
+		else if num2 > 100
+			error = 'Num1 should not be greater than 100'
+		
+		if error != empty
+			isError = yes
+
+		if isError = yes
+			panic error
+			
+		number result = num1
+		
+		number i = 0
+		
+		until i < num2, i++
+			result = result + 1
+		
+		return result
+	}
+	
+	write 'Enter first numner: '
+	number num1 = read
+	write 'Enter first numner: '
+	number num2 = read
+	
+	result = call calculate(num1, num2)
+	
+	messsage = 'Your result is : ' + result
+	write messsage
+}
